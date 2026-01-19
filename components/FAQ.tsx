@@ -41,37 +41,37 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="section-padding bg-gradient-to-b from-black via-gray-900 to-black">
-      <div className="max-w-4xl mx-auto" ref={ref}>
+    <section id="faq" className="section-padding bg-black">
+      <div className="max-w-[800px] mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
             Часто задаваемые вопросы
           </h2>
-          <div className="w-20 h-1 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-gray-300">
+          <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
+          <p className="text-base md:text-lg text-[#e8e8e8] leading-relaxed tracking-wide">
             Ответы на популярные вопросы о работе со мной
           </p>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden"
+              className="bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/5 transition-colors duration-300"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors duration-300"
               >
-                <span className="text-lg font-semibold text-white pr-4">
+                <span className="text-base md:text-lg font-medium text-white pr-4 tracking-tight">
                   {faq.question}
                 </span>
                 <motion.div
@@ -80,7 +80,7 @@ export default function FAQ() {
                   className="flex-shrink-0"
                 >
                   <svg
-                    className="w-6 h-6 text-[#FF6B6B]"
+                    className="w-5 h-5 text-[#FF6B6B]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-gray-300 leading-relaxed">
+                    <div className="px-6 pb-5 text-[#b0b0b0] leading-relaxed text-sm md:text-base">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -118,14 +118,14 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center p-8 bg-gradient-to-r from-[#FF6B6B]/10 to-[#FF8E8E]/10 rounded-2xl border border-[#FF6B6B]/20"
+          className="mt-12 text-center p-8 bg-gradient-to-r from-[#FF6B6B]/8 to-[#FF8E8E]/5 rounded-2xl border border-[#FF6B6B]/15"
         >
-          <p className="text-lg text-gray-300 mb-4">
+          <p className="text-base text-[#e8e8e8] mb-4 tracking-wide">
             Не нашли ответ на свой вопрос?
           </p>
           <a
             href="#contact"
-            className="inline-block px-6 py-3 bg-[#FF6B6B] text-white font-semibold rounded-full hover:bg-[#FF8E8E] transition-all duration-300 transform hover:scale-105"
+            className="inline-block px-6 py-3 bg-[#FF6B6B] text-white font-medium rounded-full hover:bg-[#ff8585] transition-all duration-300 tracking-wide"
           >
             Задать вопрос лично
           </a>

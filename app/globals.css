@@ -3,15 +3,18 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --foreground-muted: #b0b0b0;
+  --foreground-light: #e8e8e8;
   --accent: #FF6B6B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-light: var(--foreground-light);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
 * {
@@ -27,16 +30,30 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   overflow-x: hidden;
+  letter-spacing: 0.5px;
+  line-height: 1.7;
 }
 
 .section-padding {
-  padding: 6rem 1.5rem;
+  padding: 5rem 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .section-padding {
+    padding: 4rem 2rem;
+  }
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 4rem 1rem;
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 3rem 1rem;
   }
 }

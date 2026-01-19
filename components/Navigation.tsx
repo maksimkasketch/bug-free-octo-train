@@ -27,7 +27,7 @@ export default function Navigation() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         onClick={() => setIsOpen(true)}
-        className="fixed top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+        className="fixed top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/[0.05] backdrop-blur-md rounded-full border border-white/10 hover:bg-white/[0.1] transition-all duration-300"
       >
         <svg
           className="w-6 h-6 text-white"
@@ -52,7 +52,7 @@ export default function Navigation() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
               onClick={() => setIsOpen(false)}
             />
 
@@ -60,13 +60,13 @@ export default function Navigation() {
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-white/10 z-50 flex flex-col"
+              transition={{ type: 'spring', damping: 30, stiffness: 250 }}
+              className="fixed top-0 right-0 h-full w-80 bg-black/98 backdrop-blur-xl border-l border-white/5 z-50 flex flex-col"
             >
-              <div className="p-6 border-b border-white/10">
+              <div className="p-6 border-b border-white/5">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors ml-auto"
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/[0.05] transition-colors ml-auto"
                 >
                   <svg
                     className="w-6 h-6 text-white"
@@ -96,20 +96,20 @@ export default function Navigation() {
                       <a
                         href={item.href}
                         onClick={handleLinkClick}
-                        className="flex items-center gap-4 px-4 py-3 rounded-lg text-white hover:bg-white/10 transition-all duration-300 group"
+                        className="flex items-center gap-4 px-4 py-3 rounded-lg text-white hover:bg-white/[0.03] transition-all duration-300 group"
                       >
-                        <span className="text-2xl group-hover:scale-125 transition-transform duration-300">
+                        <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
                           {item.icon}
                         </span>
-                        <span className="text-lg font-medium">{item.label}</span>
+                        <span className="text-base font-medium tracking-tight">{item.label}</span>
                       </a>
                     </motion.li>
                   ))}
                 </ul>
               </nav>
 
-              <div className="p-6 border-t border-white/10">
-                <div className="text-center text-gray-400 text-sm">
+              <div className="p-6 border-t border-white/5">
+                <div className="text-center text-[#b0b0b0] text-sm">
                   <p>@vityapump</p>
                   <p className="mt-1">Online Coach</p>
                 </div>
