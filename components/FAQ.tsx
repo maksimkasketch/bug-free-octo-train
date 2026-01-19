@@ -42,18 +42,18 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="section-padding bg-black">
-      <div className="max-w-[800px] mx-auto" ref={ref}>
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white tracking-tight">
             Часто задаваемые вопросы
           </h2>
           <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-base md:text-lg text-[#e8e8e8] leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed tracking-wide">
             Ответы на популярные вопросы о работе со мной
           </p>
         </motion.div>
@@ -65,13 +65,13 @@ export default function FAQ() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-white/[0.02] transition-colors duration-300"
               >
-                <span className="text-base md:text-lg font-medium text-white pr-4 tracking-tight">
+                <span className="text-base sm:text-lg font-medium text-white pr-4 tracking-tight">
                   {faq.question}
                 </span>
                 <motion.div
@@ -104,7 +104,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-[#b0b0b0] leading-relaxed text-sm md:text-base">
+                    <div className="px-6 pb-5 text-gray-400 leading-relaxed text-sm sm:text-base">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -118,14 +118,14 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 text-center p-8 bg-gradient-to-r from-[#FF6B6B]/8 to-[#FF8E8E]/5 rounded-2xl border border-[#FF6B6B]/15"
+          className="mt-12 text-center p-8 bg-gradient-to-r from-[#FF6B6B]/8 to-[#FF8E8E]/5 rounded-2xl border border-[#FF6B6B]/15 shadow-xl"
         >
-          <p className="text-base text-[#e8e8e8] mb-4 tracking-wide">
+          <p className="text-base text-gray-300 mb-4 tracking-wide">
             Не нашли ответ на свой вопрос?
           </p>
           <a
             href="#contact"
-            className="inline-block px-6 py-3 bg-[#FF6B6B] text-white font-medium rounded-full hover:bg-[#ff8585] transition-all duration-300 tracking-wide"
+            className="inline-block px-6 py-3 bg-gradient-to-r from-pink-500 to-red-500 text-white font-medium rounded-lg sm:rounded-xl hover:shadow-lg hover:from-pink-600 hover:to-red-600 transition-all duration-300 active:scale-95 tracking-wide"
           >
             Задать вопрос лично
           </a>

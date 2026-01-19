@@ -112,18 +112,18 @@ export default function Reviews() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF6B6B]/3 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-[1200px] mx-auto relative z-10" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white tracking-tight">
             Отзывы клиентов
           </h2>
           <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed tracking-wide">
             Реальные истории трансформации от моих клиентов
           </p>
         </motion.div>
@@ -135,20 +135,20 @@ export default function Reviews() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-3 space-y-6"
           >
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">🎯</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">5000+</h3>
-              <p className="text-[#b0b0b0] text-sm">Успешных трансформаций</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">🎯</div>
+              <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text mb-2 text-center tracking-tight">5000+</h3>
+              <p className="text-gray-400 text-sm text-center">Успешных трансформаций</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">⭐</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">98%</h3>
-              <p className="text-[#b0b0b0] text-sm">Клиентов достигли своих целей</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">⭐</div>
+              <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text mb-2 text-center tracking-tight">98%</h3>
+              <p className="text-gray-400 text-sm text-center">Клиентов достигли своих целей</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">🔥</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">-15 кг</h3>
-              <p className="text-[#b0b0b0] text-sm">Средний результат за 3 месяца</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">🔥</div>
+              <h3 className="text-xl sm:text-3xl lg:text-4xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text mb-2 text-center tracking-tight">-15 кг</h3>
+              <p className="text-gray-400 text-sm text-center">Средний результат за 3 месяца</p>
             </div>
           </motion.div>
 
@@ -255,20 +255,20 @@ export default function Reviews() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="lg:col-span-3 space-y-6"
           >
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">📊</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Научный подход</h3>
-              <p className="text-[#b0b0b0] text-sm">Все программы основаны на научных исследованиях</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">📊</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 text-center tracking-tight">Научный подход</h3>
+              <p className="text-gray-400 text-sm text-center">Все программы основаны на научных исследованиях</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">💬</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Поддержка 24/7</h3>
-              <p className="text-[#b0b0b0] text-sm">Всегда на связи для ответов на вопросы</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">💬</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 text-center tracking-tight">Поддержка 24/7</h3>
+              <p className="text-gray-400 text-sm text-center">Всегда на связи для ответов на вопросы</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
-              <div className="text-3xl mb-4">🎓</div>
-              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Европейское образование</h3>
-              <p className="text-[#b0b0b0] text-sm">Сертифицированный тренер с международным опытом</p>
+            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/10">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">🎓</div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 text-center tracking-tight">Европейское образование</h3>
+              <p className="text-gray-400 text-sm text-center">Сертифицированный тренер с международным опытом</p>
             </div>
           </motion.div>
         </div>
@@ -292,8 +292,8 @@ export default function Reviews() {
             onClick={() => setIsAutoplay(!isAutoplay)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               isAutoplay
-                ? 'bg-[#FF6B6B] text-white'
-                : 'bg-white/[0.05] text-white hover:bg-white/[0.1]'
+                ? 'bg-gradient-to-r from-pink-500 to-red-500 text-white hover:shadow-lg hover:from-pink-600 hover:to-red-600'
+                : 'bg-white/10 text-white hover:bg-white/15'
             }`}
           >
             {isAutoplay ? '⏸ Пауза' : '▶ Авто'}
