@@ -60,75 +60,75 @@ export default function Pricing() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="pricing" className="section-padding bg-gradient-to-b from-black via-gray-900 to-black">
-      <div className="max-w-7xl mx-auto" ref={ref}>
+    <section id="pricing" className="section-padding bg-black">
+      <div className="max-w-[1200px] mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
             Тарифы
           </h2>
-          <div className="w-20 h-1 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
+          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
             Выберите оптимальный тариф для достижения ваших целей
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.03, y: -10 }}
+              whileHover={{ scale: 1.02, y: -5 }}
               className={`relative p-8 rounded-2xl backdrop-blur-sm border ${
                 plan.featured
-                  ? 'bg-gradient-to-br from-[#FF6B6B]/20 to-[#FF6B6B]/5 border-[#FF6B6B] shadow-2xl shadow-[#FF6B6B]/20'
-                  : 'bg-white/5 border-white/10'
+                  ? 'bg-gradient-to-br from-[#FF6B6B]/15 to-[#FF6B6B]/5 border-[#FF6B6B]/30 shadow-xl shadow-[#FF6B6B]/10'
+                  : 'bg-white/[0.03] border-white/5'
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-[#FF6B6B] text-white text-sm font-bold rounded-full shadow-lg">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 px-4 py-1.5 bg-[#FF6B6B] text-white text-xs font-medium rounded-full shadow-lg">
                   РЕКОМЕНДУЕМ
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">
+                <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">
                   {plan.name}
                 </h3>
-                <p className="text-gray-400 text-sm mb-6">
+                <p className="text-[#b0b0b0] text-sm mb-6 leading-relaxed">
                   {plan.description}
                 </p>
                 <div className="flex items-end justify-center gap-2">
-                  <span className="text-5xl font-bold text-white">
+                  <span className="text-4xl font-semibold text-white">
                     {plan.price}
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm mt-2">
+                <p className="text-[#b0b0b0] text-sm mt-2">
                   {plan.period}
                 </p>
               </div>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-300">
-                    <span className="text-[#FF6B6B] text-xl flex-shrink-0">✓</span>
-                    <span>{feature}</span>
+                  <li key={i} className="flex items-start gap-3 text-[#e8e8e8] text-sm">
+                    <span className="text-[#FF6B6B] text-lg flex-shrink-0 mt-0.5">✓</span>
+                    <span className="leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <a
                 href="#contact"
-                className={`block w-full text-center px-6 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+                className={`block w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   plan.featured
-                    ? 'bg-[#FF6B6B] text-white hover:bg-[#FF8E8E] shadow-lg shadow-[#FF6B6B]/50'
-                    : 'bg-white/10 text-white hover:bg-white/20'
+                    ? 'bg-[#FF6B6B] text-white hover:bg-[#ff8585] shadow-lg shadow-[#FF6B6B]/30'
+                    : 'bg-white/10 text-white hover:bg-white/15'
                 }`}
               >
                 {plan.buttonText}

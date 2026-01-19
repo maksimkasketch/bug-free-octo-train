@@ -38,25 +38,25 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             repeat: Infinity,
             ease: 'linear',
           }}
-          className="text-6xl"
+          className="text-5xl"
         >
-          🏋️
+          ⚖️
         </motion.div>
 
-        <div className="relative w-64 h-2 bg-gray-800 rounded-full overflow-hidden">
+        <div className="relative w-64 h-2 bg-white/[0.05] rounded-full overflow-hidden">
           <motion.div
-            className="absolute left-0 top-0 h-full bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E]"
+            className="absolute left-0 top-0 h-full bg-gradient-to-r from-[#FF6B6B]/80 to-[#FF8E8E]/60"
             initial={{ width: 0 }}
             animate={{ width: `${progress}%` }}
             transition={{ duration: 0.3 }}
           />
         </div>
 
-        <div className="text-xl font-bold text-white">
+        <div className="text-xl font-medium text-white">
           {progress}%
         </div>
 
-        <div className="text-sm text-gray-400 uppercase tracking-widest">
+        <div className="text-sm text-[#b0b0b0] uppercase tracking-widest">
           Loading @vityapump
         </div>
       </div>

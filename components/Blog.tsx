@@ -55,23 +55,23 @@ export default function Blog() {
 
   return (
     <section id="blog" className="section-padding bg-black">
-      <div className="max-w-7xl mx-auto" ref={ref}>
+      <div className="max-w-[1400px] mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
             Блог и TikTok
           </h2>
-          <div className="w-20 h-1 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
+          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
             Полезный контент о тренировках, питании и мотивации
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {blogPosts.map((post, index) => (
             <motion.a
               key={index}
@@ -81,29 +81,29 @@ export default function Blog() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -10 }}
-              className="group relative p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/10 hover:border-[#FF6B6B]/50"
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="group relative p-6 bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden transition-all duration-300 hover:bg-white/[0.05] hover:border-[#FF6B6B]/30"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FF6B6B]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FF6B6B]/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div className="relative z-10">
                 <div className="mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#FF6B6B]/20 to-[#FF6B6B]/5 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#FF6B6B]/15 to-[#FF6B6B]/5 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300">
                     {post.icon}
                   </div>
                 </div>
 
-                <div className="text-xs text-gray-500 mb-3">{post.date}</div>
+                <div className="text-xs text-[#b0b0b0] mb-3 tracking-wide">{post.date}</div>
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#FF6B6B] transition-colors duration-300">
+                <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-[#FF6B6B] transition-colors duration-300 tracking-tight">
                   {post.title}
                 </h3>
 
-                <p className="text-gray-400 mb-6 leading-relaxed">
+                <p className="text-[#b0b0b0] mb-6 leading-relaxed text-sm">
                   {post.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-[#FF6B6B] font-semibold">
+                <div className="flex items-center gap-2 text-[#FF6B6B] font-medium text-sm">
                   <span>Смотреть на TikTok</span>
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
@@ -114,7 +114,7 @@ export default function Blog() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FF6B6B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FF6B6B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.a>
           ))}
         </div>
@@ -129,7 +129,7 @@ export default function Blog() {
             href="https://tiktok.com/@vityapump"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FF6B6B] to-[#FF8E8E] text-white font-semibold rounded-full hover:shadow-2xl hover:shadow-[#FF6B6B]/50 transition-all duration-300 transform hover:scale-105"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#FF6B6B] to-[#ff8585] text-white font-medium rounded-full hover:shadow-xl hover:shadow-[#FF6B6B]/30 transition-all duration-300 tracking-wide"
           >
             <span className="text-2xl">📱</span>
             <span>Подписаться на TikTok @vityapump</span>

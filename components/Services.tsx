@@ -51,71 +51,71 @@ export default function Services() {
 
   return (
     <section id="services" className="section-padding bg-black">
-      <div className="max-w-7xl mx-auto" ref={ref}>
+      <div className="max-w-[1200px] mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
             Услуги
           </h2>
-          <div className="w-20 h-1 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
+          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
             Выберите формат работы, который подходит именно вам
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05, y: -10 }}
+              whileHover={{ scale: 1.02, y: -5 }}
               className={`relative p-8 rounded-2xl backdrop-blur-sm border overflow-hidden ${
                 service.featured
-                  ? 'bg-gradient-to-br from-[#FF6B6B]/20 to-[#FF6B6B]/5 border-[#FF6B6B]'
-                  : 'bg-white/5 border-white/10'
+                  ? 'bg-gradient-to-br from-[#FF6B6B]/15 to-[#FF6B6B]/5 border-[#FF6B6B]/30'
+                  : 'bg-white/[0.03] border-white/5'
               }`}
             >
               {service.featured && (
-                <div className="absolute top-4 right-4 px-3 py-1 bg-[#FF6B6B] text-white text-xs font-bold rounded-full">
+                <div className="absolute top-4 right-4 px-3 py-1 bg-[#FF6B6B] text-white text-xs font-medium rounded-full">
                   ПОПУЛЯРНО
                 </div>
               )}
 
-              <div className="text-6xl mb-6">{service.icon}</div>
-              
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <div className="text-5xl mb-6">{service.icon}</div>
+
+              <h3 className="text-xl font-semibold text-white mb-4 tracking-tight">
                 {service.title}
               </h3>
-              
-              <p className="text-gray-300 mb-6">
+
+              <p className="text-[#e8e8e8] mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2 text-gray-400">
-                    <span className="text-[#FF6B6B] mt-1">✓</span>
+                  <li key={i} className="flex items-start gap-2 text-[#b0b0b0] text-sm">
+                    <span className="text-[#FF6B6B] mt-0.5 text-base">✓</span>
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="text-3xl font-bold text-white mb-6">
+              <div className="text-2xl font-semibold text-white mb-6">
                 {service.price}
               </div>
 
               <a
                 href="#contact"
-                className={`block w-full text-center px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`block w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   service.featured
-                    ? 'bg-[#FF6B6B] text-white hover:bg-[#FF8E8E]'
-                    : 'bg-white/10 text-white hover:bg-white/20'
+                    ? 'bg-[#FF6B6B] text-white hover:bg-[#ff8585]'
+                    : 'bg-white/10 text-white hover:bg-white/15'
                 }`}
               >
                 Выбрать

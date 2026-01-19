@@ -107,48 +107,48 @@ export default function Reviews() {
 
   return (
     <section id="reviews" className="section-padding bg-black relative overflow-hidden">
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF6B6B] rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF6B6B] rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-3">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FF6B6B]/3 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FF6B6B]/3 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10" ref={ref}>
+      <div className="max-w-[1200px] mx-auto relative z-10" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
             Отзывы клиентов
           </h2>
-          <div className="w-20 h-1 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+          <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
+          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
             Реальные истории трансформации от моих клиентов
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-3 space-y-6"
           >
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-2xl font-bold text-white mb-2">5000+</h3>
-              <p className="text-gray-400">Успешных трансформаций</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">🎯</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">5000+</h3>
+              <p className="text-[#b0b0b0] text-sm">Успешных трансформаций</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">⭐</div>
-              <h3 className="text-2xl font-bold text-white mb-2">98%</h3>
-              <p className="text-gray-400">Клиентов достигли своих целей</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">⭐</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">98%</h3>
+              <p className="text-[#b0b0b0] text-sm">Клиентов достигли своих целей</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">🔥</div>
-              <h3 className="text-2xl font-bold text-white mb-2">-15 кг</h3>
-              <p className="text-gray-400">Средний результат за 3 месяца</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">🔥</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">-15 кг</h3>
+              <p className="text-[#b0b0b0] text-sm">Средний результат за 3 месяца</p>
             </div>
           </motion.div>
 
@@ -156,7 +156,7 @@ export default function Reviews() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-4 flex justify-center"
+            className="lg:col-span-6 flex justify-center"
           >
             <div className="relative">
               <motion.div
@@ -168,16 +168,16 @@ export default function Reviews() {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className="relative w-80 h-[600px] bg-black rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden"
+                className="relative w-80 h-[600px] bg-black rounded-[3rem] border-8 border-gray-900 shadow-2xl overflow-hidden"
               >
                 <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-20" />
 
                 <div className="h-full bg-gradient-to-b from-gray-900 to-black p-4 overflow-hidden">
-                  <div className="bg-white/5 rounded-t-2xl p-3 mb-2 flex items-center gap-3">
+                  <div className="bg-white/[0.03] rounded-t-2xl p-3 mb-2 flex items-center gap-3">
                     <div className="text-2xl">{currentReview.avatar}</div>
                     <div>
-                      <div className="text-white font-semibold">{currentReview.name}</div>
-                      <div className="text-gray-400 text-xs">{currentReview.date}</div>
+                      <div className="text-white font-medium">{currentReview.name}</div>
+                      <div className="text-[#b0b0b0] text-xs">{currentReview.date}</div>
                     </div>
                   </div>
 
@@ -193,28 +193,28 @@ export default function Reviews() {
                         transition={{ duration: 0.3 }}
                         className="space-y-3"
                       >
-                        <div className="bg-white/10 rounded-2xl rounded-tl-none p-3">
-                          <div className="text-xs text-gray-400 mb-2">{currentReview.beforeText}</div>
-                          <div className="w-full h-48 bg-gradient-to-br from-gray-700 to-gray-600 rounded-lg flex items-center justify-center">
+                        <div className="bg-white/[0.05] rounded-2xl rounded-tl-none p-3">
+                          <div className="text-xs text-[#b0b0b0] mb-2">{currentReview.beforeText}</div>
+                          <div className="w-full h-48 bg-gradient-to-br from-gray-800 to-gray-700 rounded-lg flex items-center justify-center">
                             <span className="text-6xl">📸</span>
                           </div>
                         </div>
 
                         <div className="flex justify-center">
-                          <div className="bg-[#FF6B6B]/20 rounded-full px-4 py-2 flex items-center gap-2">
+                          <div className="bg-[#FF6B6B]/15 rounded-full px-4 py-2 flex items-center gap-2">
                             <span className="text-xl">⚡</span>
                             <span className="text-xs text-white">Трансформация</span>
                           </div>
                         </div>
 
-                        <div className="bg-white/10 rounded-2xl rounded-tl-none p-3">
-                          <div className="text-xs text-gray-400 mb-2">{currentReview.afterText}</div>
-                          <div className="w-full h-48 bg-gradient-to-br from-[#FF6B6B]/30 to-[#FF8E8E]/20 rounded-lg flex items-center justify-center">
+                        <div className="bg-white/[0.05] rounded-2xl rounded-tl-none p-3">
+                          <div className="text-xs text-[#b0b0b0] mb-2">{currentReview.afterText}</div>
+                          <div className="w-full h-48 bg-gradient-to-br from-[#FF6B6B]/20 to-[#FF8E8E]/15 rounded-lg flex items-center justify-center">
                             <span className="text-6xl">💪</span>
                           </div>
                         </div>
 
-                        <div className="bg-white/10 rounded-2xl rounded-tl-none p-4">
+                        <div className="bg-white/[0.05] rounded-2xl rounded-tl-none p-4">
                           <p className="text-white text-sm leading-relaxed">
                             {currentReview.text}
                           </p>
@@ -228,7 +228,7 @@ export default function Reviews() {
               <div className="absolute -left-16 top-1/2 transform -translate-y-1/2">
                 <button
                   onClick={handlePrev}
-                  className="w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-white/[0.05] hover:bg-white/[0.1] backdrop-blur-sm border border-white/10 rounded-full flex items-center justify-center transition-all duration-300"
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -239,7 +239,7 @@ export default function Reviews() {
               <div className="absolute -right-16 top-1/2 transform -translate-y-1/2">
                 <button
                   onClick={handleNext}
-                  className="w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center transition-all duration-300"
+                  className="w-12 h-12 bg-white/[0.05] hover:bg-white/[0.1] backdrop-blur-sm border border-white/10 rounded-full flex items-center justify-center transition-all duration-300"
                 >
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -253,22 +253,22 @@ export default function Reviews() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="lg:col-span-4 space-y-6"
+            className="lg:col-span-3 space-y-6"
           >
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Научный подход</h3>
-              <p className="text-gray-400">Все программы основаны на научных исследованиях</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">📊</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Научный подход</h3>
+              <p className="text-[#b0b0b0] text-sm">Все программы основаны на научных исследованиях</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">💬</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Поддержка 24/7</h3>
-              <p className="text-gray-400">Всегда на связи для ответов на вопросы</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">💬</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Поддержка 24/7</h3>
+              <p className="text-[#b0b0b0] text-sm">Всегда на связи для ответов на вопросы</p>
             </div>
-            <div className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-              <div className="text-4xl mb-4">🎓</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Европейское образование</h3>
-              <p className="text-gray-400">Сертифицированный тренер с международным опытом</p>
+            <div className="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5">
+              <div className="text-3xl mb-4">🎓</div>
+              <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">Европейское образование</h3>
+              <p className="text-[#b0b0b0] text-sm">Сертифицированный тренер с международным опытом</p>
             </div>
           </motion.div>
         </div>
@@ -279,10 +279,10 @@ export default function Reviews() {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-[#FF6B6B] w-8'
-                    : 'bg-white/30 hover:bg-white/50'
+                    ? 'bg-[#FF6B6B] w-6'
+                    : 'bg-white/[0.2] hover:bg-white/[0.3]'
                 }`}
               />
             ))}
@@ -290,10 +290,10 @@ export default function Reviews() {
 
           <button
             onClick={() => setIsAutoplay(!isAutoplay)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               isAutoplay
                 ? 'bg-[#FF6B6B] text-white'
-                : 'bg-white/10 text-white hover:bg-white/20'
+                : 'bg-white/[0.05] text-white hover:bg-white/[0.1]'
             }`}
           >
             {isAutoplay ? '⏸ Пауза' : '▶ Авто'}
