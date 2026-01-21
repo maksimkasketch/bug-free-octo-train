@@ -27,7 +27,7 @@ export default function Navigation() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5, duration: 0.5 }}
         onClick={() => setIsOpen(true)}
-        className="fixed top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/[0.05] backdrop-blur-md rounded-full border border-white/10 hover:bg-white/[0.1] transition-all duration-300"
+        className="fixed top-6 right-6 z-50 w-12 h-12 flex items-center justify-center bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-white/10"
       >
         <svg
           className="w-6 h-6 text-white"
@@ -66,7 +66,7 @@ export default function Navigation() {
               <div className="p-6 border-b border-white/5">
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/[0.05] transition-colors ml-auto"
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/5 transition-colors ml-auto"
                 >
                   <svg
                     className="w-6 h-6 text-white"
@@ -96,7 +96,7 @@ export default function Navigation() {
                       <a
                         href={item.href}
                         onClick={handleLinkClick}
-                        className="flex items-center gap-4 px-4 py-3 rounded-lg text-white hover:bg-white/[0.03] transition-all duration-300 group"
+                        className="flex items-center gap-4 px-4 py-3 rounded-lg text-white hover:bg-white/5 transition-all duration-300 group"
                       >
                         <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
                           {item.icon}
@@ -109,7 +109,7 @@ export default function Navigation() {
               </nav>
 
               <div className="p-6 border-t border-white/5">
-                <div className="text-center text-[#b0b0b0] text-sm">
+                <div className="text-center text-gray-400 text-sm">
                   <p>@vityapump</p>
                   <p className="mt-1">Online Coach</p>
                 </div>

@@ -40,18 +40,18 @@ export default function About() {
 
   return (
     <section id="about" className="section-padding bg-black">
-      <div className="max-w-[1200px] mx-auto" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white tracking-tight">
             О тренере
           </h2>
           <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed tracking-wide">
             Я @vityapump — сертифицированный онлайн-тренер с европейским образованием.
             Моя миссия — помочь вам достичь тела мечты через научный подход к тренировкам и питанию.
           </p>
@@ -61,41 +61,38 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 max-w-[900px] mx-auto"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
-              className="text-center p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/5"
+              className="text-center p-6 sm:p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:bg-white/10 transition-all duration-300 hover:shadow-2xl"
             >
-              <div className="text-3xl md:text-4xl font-semibold text-[#FF6B6B] mb-2">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 bg-clip-text mb-2">
                 {stat.number}
               </div>
-              <div className="text-[#b0b0b0] text-sm tracking-wide">{stat.label}</div>
+              <div className="text-gray-400 text-sm tracking-wide">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1000px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              whileHover={{ scale: 1.01, y: -3 }}
-              className="relative p-8 rounded-2xl bg-gradient-to-br from-white/[0.03] to-white/[0.05] backdrop-blur-sm border border-white/5 overflow-hidden group"
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="relative p-6 sm:p-8 lg:p-10 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl hover:bg-white/10 transition-all duration-300 hover:shadow-2xl"
             >
-              <div className="absolute top-0 right-0 text-7xl opacity-3 group-hover:opacity-5 transition-opacity duration-300">
-                {benefit.icon}
-              </div>
               <div className="relative z-10">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
+                <div className="text-4xl sm:text-5xl mb-4 text-center">{benefit.icon}</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-3 text-center tracking-tight">
                   {benefit.title}
                 </h3>
-                <p className="text-[#e8e8e8] leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-center text-sm sm:text-base">
                   {benefit.description}
                 </p>
               </div>

@@ -33,7 +33,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,13 +41,7 @@ export default function Hero() {
           className="mb-10"
         >
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold mb-8 leading-tight tracking-tight"
-            style={{
-              background: 'linear-gradient(to right, #ffffff, #e8e8e8)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight text-white"
           >
             Я помогу тебе<br />изменить тело и жизнь
           </motion.h1>
@@ -59,17 +53,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mb-12 space-y-5"
         >
-          <p className="text-lg md:text-xl text-[#e8e8e8] font-normal tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 font-normal leading-relaxed tracking-wide">
             Онлайн-тренер <span className="text-[#FF6B6B] font-medium">@vityapump</span>
           </p>
-          <div className="flex flex-wrap justify-center gap-6 text-[#b0b0b0]">
+          <div className="flex flex-wrap justify-center gap-6 text-gray-400">
             <div className="flex items-center gap-2">
               <span className="text-2xl">⏱️</span>
-              <span className="text-sm md:text-base tracking-wide">Опыт работы более 3 лет</span>
+              <span className="text-sm sm:text-base tracking-wide">Опыт работы более 3 лет</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-sm md:text-base tracking-wide">Более 5000 трансформаций</span>
+              <span className="text-sm sm:text-base tracking-wide">Более 5000 трансформаций</span>
             </div>
           </div>
         </motion.div>
@@ -81,7 +75,7 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="inline-block px-10 py-4 bg-[#FF6B6B] text-white text-base md:text-lg font-medium rounded-full hover:bg-[#ff8585] transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-[#FF6B6B]/30 tracking-wide"
+            className="inline-block px-8 py-3 sm:px-10 sm:py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg sm:rounded-xl transition-all duration-300 hover:shadow-lg hover:from-pink-600 hover:to-red-600 active:scale-95 tracking-wide"
           >
             Начать трансформацию →
           </a>

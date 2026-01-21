@@ -78,33 +78,34 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const target = e.target as HTMLInputElement | HTMLTextAreaElement;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [target.name]: target.value,
     });
-    if (errors[e.target.name as keyof typeof errors]) {
+    if (errors[target.name as keyof typeof errors]) {
       setErrors({
         ...errors,
-        [e.target.name]: '',
+        [target.name]: '',
       });
     }
   };
 
   return (
     <section id="contact" className="section-padding bg-black">
-      <div className="max-w-[1200px] mx-auto" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white tracking-tight">
             Контакты
           </h2>
           <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed tracking-wide">
             Готовы начать свою трансформацию? Свяжитесь со мной удобным способом
           </p>
         </motion.div>
@@ -115,7 +116,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-xl font-semibold text-white mb-6 tracking-tight">
+            <h3 className="text-xl font-bold text-white mb-6 text-center lg:text-left tracking-tight">
               Свяжитесь со мной
             </h3>
 
@@ -126,8 +127,8 @@ export default function Contact() {
                   href={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.01, x: 5 }}
-                  className="flex items-center gap-4 p-4 bg-white/[0.03] backdrop-blur-sm border border-white/5 rounded-2xl hover:bg-white/[0.05] transition-all duration-300"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                  className="flex items-center gap-4 p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl"
                   style={{
                     borderColor: `${social.color}20`,
                   }}
@@ -142,10 +143,10 @@ export default function Contact() {
                   </div>
                   <div className="flex-1">
                     <div className="text-white font-medium">{social.name}</div>
-                    <div className="text-[#b0b0b0] text-sm">{social.description}</div>
+                    <div className="text-gray-400 text-sm">{social.description}</div>
                   </div>
                   <svg
-                    className="w-5 h-5 text-[#b0b0b0]"
+                    className="w-5 h-5 text-gray-400"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -154,19 +155,19 @@ export default function Contact() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 5l7 7-7 7"
+                      d="M9 5l7 7-7-7"
                     />
                   </svg>
                 </motion.a>
               ))}
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-[#FF6B6B]/8 to-[#FF8E8E]/4 border border-[#FF6B6B]/15 rounded-2xl">
+            <div className="p-6 bg-gradient-to-br from-[#FF6B6B]/8 to-[#FF8E8E]/4 border border-[#FF6B6B]/15 rounded-2xl shadow-xl">
               <div className="flex items-start gap-4">
                 <div className="text-3xl">⏰</div>
                 <div>
                   <h4 className="text-white font-semibold mb-2 tracking-tight">Время работы</h4>
-                  <p className="text-[#e8e8e8] text-sm leading-relaxed">
+                  <p className="text-gray-300 text-sm leading-relaxed">
                     Отвечаю на сообщения ежедневно с 9:00 до 21:00 по МСК.
                     Срочные вопросы - в любое время!
                   </p>
@@ -180,7 +181,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h3 className="text-xl font-semibold text-white mb-6 tracking-tight">
+            <h3 className="text-xl font-bold text-white mb-6 text-center lg:text-left tracking-tight">
               Написать сообщение
             </h3>
 
@@ -192,9 +193,9 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Ваше имя"
-                  className={`w-full px-6 py-4 bg-white/[0.03] border ${
-                    errors.name ? 'border-red-500' : 'border-white/5'
-                  } rounded-2xl text-white placeholder-[#b0b0b0] focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300`}
+                  className={`w-full px-6 py-4 bg-white/5 border ${
+                    errors.name ? 'border-red-500' : 'border-white/10'
+                  } rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300`}
                 />
                 {errors.name && (
                   <p className="mt-2 text-sm text-red-500">{errors.name}</p>
@@ -208,9 +209,9 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Ваш email"
-                  className={`w-full px-6 py-4 bg-white/[0.03] border ${
-                    errors.email ? 'border-red-500' : 'border-white/5'
-                  } rounded-2xl text-white placeholder-[#b0b0b0] focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300`}
+                  className={`w-full px-6 py-4 bg-white/5 border ${
+                    errors.email ? 'border-red-500' : 'border-white/10'
+                  } rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300`}
                 />
                 {errors.email && (
                   <p className="mt-2 text-sm text-red-500">{errors.email}</p>
@@ -224,9 +225,9 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Ваше сообщение"
                   rows={6}
-                  className={`w-full px-6 py-4 bg-white/[0.03] border ${
-                    errors.message ? 'border-red-500' : 'border-white/5'
-                  } rounded-2xl text-white placeholder-[#b0b0b0] focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300 resize-none`}
+                  className={`w-full px-6 py-4 bg-white/5 border ${
+                    errors.message ? 'border-red-500' : 'border-white/10'
+                  } rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B6B] transition-colors duration-300 resize-none`}
                 />
                 {errors.message && (
                   <p className="mt-2 text-sm text-red-500">{errors.message}</p>
@@ -235,9 +236,9 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="w-full px-8 py-4 bg-[#FF6B6B] text-white font-medium rounded-full hover:bg-[#ff8585] transition-all duration-300 tracking-wide"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-lg sm:rounded-xl hover:shadow-lg hover:from-pink-600 hover:to-red-600 transition-all duration-300 tracking-wide active:scale-95"
               >
                 Отправить сообщение
               </motion.button>
@@ -251,10 +252,10 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 pt-8 border-t border-white/5 text-center"
         >
-          <p className="text-[#b0b0b0]">
+          <p className="text-gray-400">
             © 2024 @vityapump. Все права защищены.
           </p>
-          <p className="text-[#b0b0b0] text-sm mt-2 tracking-wide">
+          <p className="text-gray-400 text-sm mt-2 tracking-wide">
             Онлайн-тренер | Трансформация тела и жизни
           </p>
         </motion.div>

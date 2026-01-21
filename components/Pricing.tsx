@@ -61,18 +61,18 @@ export default function Pricing() {
 
   return (
     <section id="pricing" className="section-padding bg-black">
-      <div className="max-w-[1200px] mx-auto" ref={ref}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6 text-white tracking-tight">
             Тарифы
           </h2>
           <div className="w-16 h-0.5 bg-[#FF6B6B] mx-auto mb-8" />
-          <p className="text-base md:text-lg text-[#e8e8e8] max-w-[800px] mx-auto leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed tracking-wide">
             Выберите оптимальный тариф для достижения ваших целей
           </p>
         </motion.div>
@@ -84,11 +84,11 @@ export default function Pricing() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className={`relative p-8 rounded-2xl backdrop-blur-sm border ${
+              whileHover={{ scale: 1.02, y: -4 }}
+              className={`relative p-8 sm:p-10 lg:p-12 rounded-2xl backdrop-blur-sm border shadow-xl hover:shadow-2xl transition-all duration-300 ${
                 plan.featured
                   ? 'bg-gradient-to-br from-[#FF6B6B]/15 to-[#FF6B6B]/5 border-[#FF6B6B]/30 shadow-xl shadow-[#FF6B6B]/10'
-                  : 'bg-white/[0.03] border-white/5'
+                  : 'bg-white/5 border-white/10 hover:bg-white/10'
               }`}
             >
               {plan.featured && (
@@ -98,25 +98,25 @@ export default function Pricing() {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-xl font-semibold text-white mb-2 tracking-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-tight">
                   {plan.name}
                 </h3>
-                <p className="text-[#b0b0b0] text-sm mb-6 leading-relaxed">
+                <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                   {plan.description}
                 </p>
                 <div className="flex items-end justify-center gap-2">
-                  <span className="text-4xl font-semibold text-white">
+                  <span className="text-4xl sm:text-5xl font-bold text-transparent bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text">
                     {plan.price}
                   </span>
                 </div>
-                <p className="text-[#b0b0b0] text-sm mt-2">
+                <p className="text-gray-400 text-sm mt-2">
                   {plan.period}
                 </p>
               </div>
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#e8e8e8] text-sm">
+                  <li key={i} className="flex items-start gap-3 text-gray-300 text-sm sm:text-base">
                     <span className="text-[#FF6B6B] text-lg flex-shrink-0 mt-0.5">✓</span>
                     <span className="leading-relaxed">{feature}</span>
                   </li>
@@ -125,9 +125,9 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className={`block w-full text-center px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`block w-full text-center px-6 py-3 rounded-lg sm:rounded-xl font-medium transition-all duration-300 ${
                   plan.featured
-                    ? 'bg-[#FF6B6B] text-white hover:bg-[#ff8585] shadow-lg shadow-[#FF6B6B]/30'
+                    ? 'bg-gradient-to-r from-pink-500 to-red-500 text-white hover:shadow-lg hover:from-pink-600 hover:to-red-600 shadow-lg shadow-[#FF6B6B]/30 active:scale-95'
                     : 'bg-white/10 text-white hover:bg-white/15'
                 }`}
               >
